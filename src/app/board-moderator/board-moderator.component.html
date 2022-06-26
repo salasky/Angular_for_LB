@@ -1,5 +1,22 @@
-<div class="container">
-  <header class="jumbotron">
-    <p>{{ content }}</p>
-  </header>
+
+<p>
+<div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+
+    <a  class="navbar-brand">Company</a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="company" class="nav-link">Company List</a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="companys/add" class="nav-link">Add</a>
+      </li>
+
+    </div>
+  </nav>
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>
 </div>
+

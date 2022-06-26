@@ -203,6 +203,28 @@
         </div>
       </div>
 
+      <div class="form-group">
+        <label for="companyName">companyName</label>
+        <input
+          type="text"
+          class="form-control"
+          name="companyName"
+          [(ngModel)]="form.companyName"
+          required
+          minlength="2"
+          maxlength="20"
+          #companyName="ngModel"
+        />
+        <div class="alert-danger" *ngIf="companyName.errors && f.submitted">
+          <div *ngIf="companyName.errors['required']">companyName is required</div>
+          <div *ngIf="companyName.errors['minlength']">
+            companyName must be at least 3 characters
+          </div>
+          <div *ngIf="companyName.errors['maxlength']">
+            companyName must be at most 20 characters
+          </div>
+        </div>
+      </div>
 
       <div class="form-group">
         <button class="btn btn-primary btn-block">Sign Up</button>
@@ -215,15 +237,9 @@
 
 
 
-
-
-
-
-
-
     </form>
     <div class="alert alert-success" *ngIf="isSuccessful">
-      Your registration is successful!
+      Your registration is successful!<br />Пожалуйста,войдите с зарегестрированными данными
     </div>
   </div>
 </div>
