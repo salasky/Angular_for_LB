@@ -12,6 +12,10 @@
       #f="ngForm"
       novalidate
     >
+
+
+
+
       <div class="form-group">
         <label for="username">Username</label>
         <input
@@ -34,6 +38,11 @@
           </div>
         </div>
       </div>
+
+
+
+
+
       <div class="form-group">
         <label for="email">Email</label>
         <input
@@ -52,6 +61,9 @@
           </div>
         </div>
       </div>
+
+
+
       <div class="form-group">
         <label for="password">Password</label>
         <input
@@ -70,12 +82,145 @@
           </div>
         </div>
       </div>
+
+
+      <div class="form-group">
+        <label for="firstName">firstName</label>
+        <input
+          type="text"
+          class="form-control"
+          name="firstName"
+          [(ngModel)]="form.firstName"
+          required
+          minlength="3"
+          maxlength="20"
+          #firstName="ngModel"
+        />
+        <div class="alert-danger" *ngIf="firstName.errors && f.submitted">
+          <div *ngIf="firstName.errors['required']">firstName is required</div>
+          <div *ngIf="firstName.errors['minlength']">
+            firstName must be at least 3 characters
+          </div>
+          <div *ngIf="firstName.errors['maxlength']">
+            firstName must be at most 20 characters
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="secondName">secondName</label>
+        <input
+          type="text"
+          class="form-control"
+          name="secondName"
+          [(ngModel)]="form.secondName"
+          required
+          minlength="3"
+          maxlength="20"
+          #secondName="ngModel"
+        />
+        <div class="alert-danger" *ngIf="secondName.errors && f.submitted">
+          <div *ngIf="secondName.errors['required']">secondName is required</div>
+          <div *ngIf="secondName.errors['minlength']">
+            secondName must be at least 3 characters
+          </div>
+          <div *ngIf="secondName.errors['maxlength']">
+            secondName must be at most 20 characters
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="lastName">lastName</label>
+        <input
+          type="text"
+          class="form-control"
+          name="lastName"
+          [(ngModel)]="form.lastName"
+          required
+          minlength="3"
+          maxlength="20"
+          #lastName="ngModel"
+        />
+        <div class="alert-danger" *ngIf="lastName.errors && f.submitted">
+          <div *ngIf="lastName.errors['required']">lastName is required</div>
+          <div *ngIf="lastName.errors['minlength']">
+            lastName must be at least 3 characters
+          </div>
+          <div *ngIf="lastName.errors['maxlength']">
+            lastName must be at most 20 characters
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="jobTitle">jobTitle</label>
+        <input
+          type="text"
+          class="form-control"
+          name="jobTitle"
+          [(ngModel)]="form.jobTitle"
+          required
+          minlength="3"
+          maxlength="20"
+          #jobTitle="ngModel"
+        />
+        <div class="alert-danger" *ngIf="jobTitle.errors && f.submitted">
+          <div *ngIf="jobTitle.errors['required']">jobTitle is required</div>
+          <div *ngIf="jobTitle.errors['minlength']">
+            jobTitle must be at least 3 characters
+          </div>
+          <div *ngIf="jobTitle.errors['maxlength']">
+            jobTitle must be at most 20 characters
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="subdivisionName">subdivisionName</label>
+        <input
+          type="text"
+          class="form-control"
+          name="subdivisionName"
+          [(ngModel)]="form.subdivisionName"
+          required
+          minlength="2"
+          maxlength="20"
+          #subdivisionName="ngModel"
+        />
+        <div class="alert-danger" *ngIf="subdivisionName.errors && f.submitted">
+          <div *ngIf="subdivisionName.errors['required']">subdivisionName is required</div>
+          <div *ngIf="subdivisionName.errors['minlength']">
+            subdivisionName must be at least 3 characters
+          </div>
+          <div *ngIf="subdivisionName.errors['maxlength']">
+            subdivisionName must be at most 20 characters
+          </div>
+        </div>
+      </div>
+
+
       <div class="form-group">
         <button class="btn btn-primary btn-block">Sign Up</button>
       </div>
+
       <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
         Signup failed!<br />{{ errorMessage }}
       </div>
+
+
+
+
+
+
+
+
+
+
     </form>
     <div class="alert alert-success" *ngIf="isSuccessful">
       Your registration is successful!
