@@ -15,6 +15,9 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { AddCompanyComponent } from './components/add-company/add-company.component';
 import { CompanyDetailsComponent } from './components/company-details/company-details.component';
 import { CompanyListComponent } from './components/company-list/company-list.component';
+import { AddSubdisisionComponent } from './components/add-subdisision/add-subdisision.component';
+import { SubdivisionDetailsComponent } from './components/subdivision-details/subdivision-details.component';
+import { SubdivisionListComponent } from './components/subdivision-list/subdivision-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,10 @@ import { CompanyListComponent } from './components/company-list/company-list.com
     BoardUserComponent,
     AddCompanyComponent,
     CompanyDetailsComponent,
-    CompanyListComponent
+    CompanyListComponent,
+    AddSubdisisionComponent,
+    SubdivisionDetailsComponent,
+    SubdivisionListComponent
   ],
   imports: [
     BrowserModule,

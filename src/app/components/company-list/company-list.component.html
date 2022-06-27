@@ -1,0 +1,24 @@
+<div class="list row">
+  </div>
+  <div class="col-md-6">
+    <h4>Company List</h4>
+
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let company of companys; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTutorial(company, i)"
+      >
+        {{ company.companyName }}
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="col-md-6">
+    <app-company-details
+      [viewMode]="true"
+      [currentCompany]="currentCompany"
+    ></app-company-details>
+  </div>

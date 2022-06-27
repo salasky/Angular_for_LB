@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
     companyName:null,
 
   };
+
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';

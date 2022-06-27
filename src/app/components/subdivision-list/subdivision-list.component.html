@@ -1,0 +1,27 @@
+<div class="list row">
+  <div class="col-md-8">
+
+  </div>
+  <div class="col-md-6">
+    <h4>Subdivisions List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let subdisisions of subdisisions; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveSubdivisions(subdisisions, i)"
+      >
+        {{ subdisisions.name }}
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="col-md-6">
+  <app-subdivision-details
+    [viewMode]="true"
+    [currentSubdivision]="currentSubdisision"
+  ></app-subdivision-details>
+</div>
+

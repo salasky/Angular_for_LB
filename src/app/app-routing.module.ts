@@ -12,6 +12,10 @@ import { CompanyListComponent } from './components/company-list/company-list.com
 import { CompanyDetailsComponent } from './components/company-details/company-details.component';
 import { AddCompanyComponent } from './components/add-company/add-company.component';
 
+import { SubdivisionListComponent } from './components/subdivision-list/subdivision-list.component';
+import { SubdivisionDetailsComponent } from './components/subdivision-details/subdivision-details.component';
+import { AddSubdisisionComponent } from './components/add-subdisision/add-subdisision.component';
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -25,8 +29,11 @@ const routes: Routes = [
 
   { path: 'mod/company', component: CompanyListComponent },
   { path: 'mod/company/:id', component: CompanyDetailsComponent },
-  { path: 'mod/companys/add', component: AddCompanyComponent }
+  { path: 'mod/companys/add', component: AddCompanyComponent },
 
+  { path: 'mod/subdivisions', component: SubdivisionListComponent },
+  { path: 'mod/subdivision/:id', component: SubdivisionDetailsComponent },
+  { path: 'mod/subdivisions/add', component: AddSubdisisionComponent }
 
 ];
 @NgModule({

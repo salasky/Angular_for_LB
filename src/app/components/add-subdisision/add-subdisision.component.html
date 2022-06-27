@@ -1,0 +1,73 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+
+
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="subdivision.name"
+          name="name"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label for="contact">contact</label>
+        <input
+          type="text"
+          class="form-control"
+          id="contact"
+          required
+          [(ngModel)]="subdivision.contact"
+          name="contact"
+        />
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="supervisor">supervisor</label>
+        <input
+          type="text"
+          class="form-control"
+          id="supervisor"
+          required
+          [(ngModel)]="subdivision.supervisor"
+          name="supervisor"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label for="companyName">companyName</label>
+        <input
+          type="text"
+          class="form-control"
+          id="companyName"
+          required
+          [(ngModel)]="subdivision.companyName"
+          name="companyName"
+        />
+
+      </div>
+      <button (click)="saveSubdivision()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Subdivision was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newSubdivision()">Add</button>
+    </div>
+
+    <div class="alert alert-warning" *ngIf="!submitted && isSignUpFailed">
+      Signup failed!<br />{{ errorMessage }}
+    </div>
+
+
+  </div>
+</div>

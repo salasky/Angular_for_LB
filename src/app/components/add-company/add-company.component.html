@@ -1,0 +1,67 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+
+      <div class="form-group">
+        <label for="companyName">CompanyName</label>
+        <input
+          type="text"
+          class="form-control"
+          id="companyName"
+          required
+          [(ngModel)]="company.companyName"
+          name="companyName"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="physicalAddress">physicalAddress</label>
+        <input
+          type="text"
+          class="form-control"
+          id="physicalAddress"
+          required
+          [(ngModel)]="company.physicalAddress"
+          name="physicalAddress"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label for="legalAddress">legalAddress</label>
+        <input
+          type="text"
+          class="form-control"
+          id="legalAddress"
+          required
+          [(ngModel)]="company.legalAddress"
+          name="legalAddress"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label for="supervisor">supervisor</label>
+        <input
+          type="text"
+          class="form-control"
+          id="supervisor"
+          required
+          [(ngModel)]="company.supervisor"
+          name="supervisor"
+        />
+      </div>
+
+
+
+
+
+      <button (click)="saveCompany()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Company was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newCompany()">Add</button>
+    </div>
+  </div>
+</div>

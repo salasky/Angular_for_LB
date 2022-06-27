@@ -1,0 +1,117 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentCompany.id">
+
+
+    <div class="card card-container">
+
+
+    <h4>Company</h4>
+    <div>
+      <label><strong>Name:</strong></label> {{ currentCompany.companyName }}
+    </div>
+
+    <div>
+      <label><strong>physicalAddress:</strong></label> {{ currentCompany.physicalAddress }}
+    </div>
+
+    <div>
+      <label><strong>legalAddress:</strong></label> {{ currentCompany.legalAddress }}
+    </div>
+
+    <div>
+      <label><strong>supervisor:</strong></label> {{ currentCompany.supervisor }}
+    </div>
+    <a
+      class="badge badge-warning"
+      routerLink="{{ currentCompany.id }}"
+    >
+      Edit
+    </a>
+  </div>
+
+  </div>
+
+  <div *ngIf="!currentCompany">
+    <br />
+    <p>Please click on a Company...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+
+  <div *ngIf="currentCompany.id" class="edit-form">
+
+    <h4>Company</h4>
+    <form>
+
+
+      <div class="form-group">
+        <label for="companyName">companyName</label>
+        <input
+          type="text"
+          class="form-control"
+          id="companyName"
+          [(ngModel)]="currentCompany.companyName"
+          name="companyName"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label for="physicalAddress">physicalAddress</label>
+        <input
+          type="text"
+          class="form-control"
+          id="physicalAddress"
+          [(ngModel)]="currentCompany.physicalAddress"
+          name="physicalAddress"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label for="legalAddress">legalAddress</label>
+        <input
+          type="text"
+          class="form-control"
+          id="legalAddress"
+          [(ngModel)]="currentCompany.legalAddress"
+          name="legalAddress"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label for="supervisor">supervisor</label>
+        <input
+          type="text"
+          class="form-control"
+          id="supervisor"
+          [(ngModel)]="currentCompany.supervisor"
+          name="supervisor"
+        />
+      </div>
+
+
+    </form>
+
+
+    <button class="badge badge-danger mr-2" (click)="deleteCompany()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateCompany()"
+    >
+      Update
+    </button>
+
+    <p>{{ message }}</p>
+  </div>
+
+
+
+
+</ng-template>
