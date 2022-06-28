@@ -1,60 +1,9 @@
-<!--<div>
-  <label><strong>Title:</strong></label> {{ currentSubdivision.name }}
-</div>
-
-<div>
-  <label><strong>Title:</strong></label> {{ currentSubdivision.contact }}
-</div>
-
-<div>
-  <label><strong>Title:</strong></label> {{ currentSubdivision.supervisor }}
-</div>
-
-<div>
-  <label><strong>Title:</strong></label> {{ currentSubdivision.companyName }} &lt;!&ndash;/////&ndash;&gt;
-</div>-->
-
-
-
-
-<!--<div class="form-group">
-  <label for="name">Name</label>
-  <input
-    type="text"
-    class="form-control"
-    id="name"
-    [(ngModel)]="currentSubdivision.name"
-    name="title"
-  />
-</div>
-
-
-<div class="form-group">
-  <label for="contact">contact</label>
-  <input
-    type="text"
-    class="form-control"
-    id="contact"
-    [(ngModel)]="currentSubdivision.contact"
-    name="contact"
-  />
-</div>
-
-<div class="form-group">
-  <label for="supervisor">supervisor</label>
-  <input
-    type="text"
-    class="form-control"
-    id="supervisor"
-    [(ngModel)]="currentSubdivision.supervisor"
-    name="title"
-  />
-</div>-->
 
 <div *ngIf="viewMode; else editable">
   <div *ngIf="currentSubdivision.id">
-    <h4>Subdivision</h4>
 
+    <div class="card card-container">
+    <h4>Subdivision</h4>
     <div>
       <label><strong>Name:</strong></label> {{ currentSubdivision.name }}
     </div>
@@ -71,6 +20,8 @@
       <label><strong>companyName:</strong></label> {{ currentSubdivision.companyName }}
     </div>
 
+
+
     <a
       class="badge badge-warning"
       routerLink="/mod/subdivision/{{ currentSubdivision.id }}"
@@ -78,11 +29,14 @@
       Edit
     </a>
   </div>
+  </div>
   <div *ngIf="!currentSubdivision">
     <br />
     <p>Please click on a Subdivision...</p>
   </div>
 </div>
+
+
 <ng-template #editable>
   <div *ngIf="currentSubdivision.id" class="edit-form">
     <h4>Subdivision</h4>
@@ -95,7 +49,7 @@
           class="form-control"
           id="name"
           [(ngModel)]="currentSubdivision.name"
-          name="title"
+          name="name"
         />
       </div>
 
@@ -118,10 +72,20 @@
           class="form-control"
           id="supervisor"
           [(ngModel)]="currentSubdivision.supervisor"
-          name="title"
+          name="supervisor"
         />
       </div>
 
+      <div class="form-group">
+        <label for="companyName">companyName</label>
+        <input
+          type="text"
+          class="form-control"
+          id="companyName"
+          [(ngModel)]="currentSubdivision.companyName"
+          name="companyName"
+        />
+      </div>
 
 
 
@@ -130,6 +94,7 @@
     <button class="badge badge-danger mr-2" (click)="deleteSubdivision()">
       Delete
     </button>
+
     <button
       type="submit"
       class="badge badge-success mb-2"
@@ -137,6 +102,7 @@
     >
       Update
     </button>
+
     <p>{{ message }}</p>
   </div>
   <div *ngIf="!currentSubdivision.id">

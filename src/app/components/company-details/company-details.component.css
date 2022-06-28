@@ -4,11 +4,12 @@
 }
 
 .card-container.card {
+
+  text-align: left;
   position: fixed;
-  right: 400px;
+  right: 220px;
   top: 90px;
   white-space: normal;
   border: black;
-
 
 }

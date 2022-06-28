@@ -6,6 +6,6 @@ export class Subdisision {
   contact?: string;
   supervisor?: string;
   companyName?: string;
-  company?: Company;
+
 
 }

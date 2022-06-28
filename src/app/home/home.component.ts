@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_services/user.service';
+import {trigger,state,style,animate,transition} from '@angular/animations';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,6 +8,8 @@ import { UserService } from '../_services/user.service';
 })
 export class HomeComponent implements OnInit {
   content?: string;
+  show=false;
+
   constructor(private userService: UserService) { }
   ngOnInit(): void {
     this.userService.getPublicContent().subscribe({

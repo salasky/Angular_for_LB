@@ -21,13 +21,14 @@
     <div>
       <label><strong>supervisor:</strong></label> {{ currentCompany.supervisor }}
     </div>
+
     <a
       class="badge badge-warning"
       routerLink="{{ currentCompany.id }}"
     >
       Edit
     </a>
-  </div>
+
 
   </div>
 
@@ -36,7 +37,7 @@
     <p>Please click on a Company...</p>
   </div>
 </div>
-
+</div>
 <ng-template #editable>
 
   <div *ngIf="currentCompany.id" class="edit-form">

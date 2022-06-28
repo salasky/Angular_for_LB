@@ -2,3 +2,11 @@
   max-width: 400px;
   margin: auto;
 }
+
+.card-container.card {
+  position: fixed;
+  right: 400px;
+  top: 90px;
+  white-space: normal;
+  border: black;
+}

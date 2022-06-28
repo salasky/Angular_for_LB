@@ -15,7 +15,7 @@ export class AddSubdisisionComponent implements OnInit {
       supervisor: '',
         companyName:'',
 
-      company:new Company(),
+
 
   };
 

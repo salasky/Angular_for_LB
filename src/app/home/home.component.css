@@ -1,0 +1,16 @@
+.containerb {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+
+/* Top left text */
+.top-left {
+  color: black;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+

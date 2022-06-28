@@ -17,7 +17,7 @@ export class SubdivisionDetailsComponent implements OnInit {
     contact: '',
     supervisor: '',
     companyName: '',
-    company:new Company() /*/////*/
+
   };
 
   message = '';
