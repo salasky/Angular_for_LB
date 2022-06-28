@@ -18,6 +18,9 @@ import { CompanyListComponent } from './components/company-list/company-list.com
 import { AddSubdisisionComponent } from './components/add-subdisision/add-subdisision.component';
 import { SubdivisionDetailsComponent } from './components/subdivision-details/subdivision-details.component';
 import { SubdivisionListComponent } from './components/subdivision-list/subdivision-list.component';
+import { AddOrderComponent } from './components/add-order/add-order.component';
+import { AOrderDetailsComponent } from './components/aorder-details/aorder-details.component';
+import { AOrderListComponent } from './components/aorder-list/aorder-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,10 @@ import { SubdivisionListComponent } from './components/subdivision-list/subdivis
     CompanyListComponent,
     AddSubdisisionComponent,
     SubdivisionDetailsComponent,
-    SubdivisionListComponent
+    SubdivisionListComponent,
+    AddOrderComponent,
+    AOrderDetailsComponent,
+    AOrderListComponent
   ],
   imports: [
     BrowserModule,

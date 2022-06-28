@@ -16,7 +16,17 @@ import { SubdivisionListComponent } from './components/subdivision-list/subdivis
 import { SubdivisionDetailsComponent } from './components/subdivision-details/subdivision-details.component';
 import { AddSubdisisionComponent } from './components/add-subdisision/add-subdisision.component';
 
+import { AOrderListComponent } from './components/aorder-list/aorder-list.component';
+import { AOrderDetailsComponent } from './components/aorder-details/aorder-details.component';
+import { AddOrderComponent } from './components/add-order/add-order.component';
+
+
 const routes: Routes = [
+
+  { path: 'user/Aorders', component: AOrderListComponent },
+  { path: 'user/Aorders/:id', component: AOrderDetailsComponent },
+  { path: 'user/Aorder/add', component: AddOrderComponent },
+
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
