@@ -26,12 +26,14 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
+  { path: 'user/company', component: CompanyListComponent },
+  { path: 'user/subdivisions', component: SubdivisionListComponent },
 
   { path: 'mod/company', component: CompanyListComponent },
   { path: 'mod/company/:id', component: CompanyDetailsComponent },
   { path: 'mod/companys/add', component: AddCompanyComponent },
 
-  { path: 'mod/subdivisions', component: SubdivisionListComponent },
+  { path: 'mod/subdivision', component: SubdivisionListComponent },
   { path: 'mod/subdivision/:id', component: SubdivisionDetailsComponent },
   { path: 'mod/subdivisions/add', component: AddSubdisisionComponent }
 

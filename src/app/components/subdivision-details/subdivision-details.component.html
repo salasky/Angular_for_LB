@@ -24,7 +24,7 @@
 
     <a
       class="badge badge-warning"
-      routerLink="/mod/subdivision/{{ currentSubdivision.id }}"
+      routerLink="{{ currentSubdivision.id }}"
     >
       Edit
     </a>
@@ -105,6 +105,12 @@
 
     <p>{{ message }}</p>
   </div>
+
+  <div class="alert alert-warning" *ngIf="isEditFailed">
+    Update failed!<br />{{ errorMessage }}
+  </div>
+
+
   <div *ngIf="!currentSubdivision.id">
     <br />
     <p>Cannot access this Subdivision...</p>

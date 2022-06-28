@@ -19,7 +19,9 @@ export class SubdivisionDetailsComponent implements OnInit {
     companyName: '',
 
   };
-
+  isSuccessful = false;
+  isEditFailed = false;
+  errorMessage = '';
   message = '';
   constructor(
     private subdivisionService: SubdivisionService,
@@ -49,9 +51,14 @@ export class SubdivisionDetailsComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
+          this.isSuccessful = true;
+          this.isEditFailed = false;
           this.message = res.message ? res.message : 'This subdivision was updated successfully!';
         },
-        error: (e) => console.error(e)
+        error: err => {
+          this.errorMessage = err.error.message;
+          this.isEditFailed = true;
+        }
       });
   }
   deleteSubdivision(): void {
