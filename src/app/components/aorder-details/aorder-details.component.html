@@ -1,0 +1,154 @@
+<p>
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentOrder.id">
+    <div class="card card-container">
+    <h4>Order</h4>
+    <div>
+      <label><strong>subject:</strong></label> {{ currentOrder.subject }}
+    </div>
+
+    <div>
+      <label><strong>periodExecution:</strong></label> {{ currentOrder.periodExecution }}
+    </div>
+    <div>
+      <label><strong>signControl:</strong></label> {{ currentOrder.signControl }}
+    </div>
+    <div>
+      <label><strong>orderText:</strong></label> {{ currentOrder.orderText }}
+    </div>
+    <div>
+      <label><strong>execEmployeeUsername:</strong></label> {{ currentOrder.execEmployeeUsername }}
+    </div>
+
+      <div>
+        <label><strong>State:</strong></label> {{ currentOrder.state }}
+      </div>
+    <a
+      class="badge badge-warning"
+      routerLink="{{ currentOrder.id }}"
+    >
+      Edit
+    </a>
+  </div>
+  <div *ngIf="!currentOrder">
+    <br />
+    <p>Please click on a Order...</p>
+  </div>
+</div>
+</div>
+<ng-template #editable>
+  <div *ngIf="currentOrder.id" class="edit-form">
+    <h4>Order</h4>
+    <form>
+
+
+      <div class="form-group">
+        <label for="subject">subject</label>
+        <input
+          type="text"
+          class="form-control"
+          id="subject"
+          [(ngModel)]="currentOrder.subject"
+          name="subject"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="periodExecution">periodExecution</label>
+        <input
+          type="text"
+          class="form-control"
+          id="periodExecution"
+          [(ngModel)]="currentOrder.periodExecution"
+          name="periodExecution"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="signControl">signControl</label>
+        <input
+          type="text"
+          class="form-control"
+          id="signControl"
+          [(ngModel)]="currentOrder.signControl"
+          name="signControl"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="orderText">orderText</label>
+        <input
+          type="text"
+          class="form-control"
+          id="orderText"
+          [(ngModel)]="currentOrder.subject"
+          name="orderText"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="execEmployeeUsername">execEmployeeUsername</label>
+        <input
+          type="text"
+          class="form-control"
+          id="execEmployeeUsername"
+          [(ngModel)]="currentOrder.execEmployeeUsername"
+          name="execEmployeeUsername"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentOrder.state }}
+      </div>
+    </form>
+
+
+    <button
+      class="badge badge-primary mr-2"
+      *ngIf="currentOrder.state=='PREPARATION'"
+      (click)="accept()"
+    >
+      Accept
+    </button>
+    <div class="alert alert-warning" *ngIf="isaccept">
+      Accept failed!<br />{{ errorMessage }}
+    </div>
+    <button
+      class="badge badge-primary mr-2"
+      *ngIf="currentOrder.state=='PREPARATION'"
+      (click)="revision()"
+    >
+      Revision
+    </button>
+    <div class="alert alert-warning" *ngIf="isrevision">
+      Revision failed!<br />{{ errorMessage }}
+    </div>
+
+
+    <button class="badge badge-danger mr-2" (click)="deleteOrder()">
+      Delete
+    </button>
+    <div class="alert alert-warning" *ngIf="isdelete">
+      Delete failed!<br />{{ errorMessage }}
+    </div>
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateOrder()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div class="alert alert-warning" *ngIf="isupdate">
+    Update failed!<br />{{ errorMessage }}
+  </div>
+
+  <div *ngIf="!currentOrder.id">
+    <br />
+    <p>Cannot access this Order...</p>
+  </div>
+</ng-template>

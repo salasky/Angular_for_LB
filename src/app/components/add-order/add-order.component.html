@@ -1,0 +1,69 @@
+<p>
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+
+        <label for="subject">Subject</label>
+        <input
+          type="text"
+          class="form-control"
+          id="subject"
+          required
+          [(ngModel)]="order.subject"
+          name="subject"
+        />
+
+        <label for="periodExecution">PeriodExecution</label>
+        <input
+          type="text"
+          class="form-control"
+          id="periodExecution"
+          required
+          [(ngModel)]="order.periodExecution"
+          name="periodExecution"
+        />
+
+        <label for="signControl">SignControl</label>
+        <input
+          type="text"
+          class="form-control"
+          id="signControl"
+          required
+          [(ngModel)]="order.signControl"
+          name="signControl"
+        />
+
+
+        <label for="orderText">OrderText</label>
+        <input
+          type="text"
+          class="form-control"
+          id="orderText"
+          required
+          [(ngModel)]="order.orderText"
+          name="orderText"
+        />
+
+        <label for="execEmployeeUsername">Execution Employee Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="execEmployeeUsername"
+          required
+          [(ngModel)]="order.execEmployeeUsername"
+          name="execEmployeeUsername"
+        />
+      </div>
+
+      <button (click)="saveOrder()" class="btn btn-success">Submit</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>Order was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newOrder()">Add</button>
+    </div>
+    <div class="alert alert-warning" *ngIf="!submitted && isSignUpFailed">
+      Add failed!<br />{{ errorMessage }}
+    </div>
+  </div>
+</div>
