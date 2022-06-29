@@ -23,9 +23,9 @@ import { AddOrderComponent } from './components/add-order/add-order.component';
 
 const routes: Routes = [
 
-  { path: 'user/Aorders', component: AOrderListComponent },
-  { path: 'user/Aorders/:id', component: AOrderDetailsComponent },
-  { path: 'user/Aorder/add', component: AddOrderComponent },
+  { path: 'user/aorder', component: AOrderListComponent },
+  { path: 'user/aorder/:id', component: AOrderDetailsComponent },
+  { path: 'user/aorders/add', component: AddOrderComponent },
 
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
