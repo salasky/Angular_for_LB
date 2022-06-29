@@ -101,7 +101,7 @@ export class AOrderDetailsComponent implements OnInit {
 
   revision(): void {
     this.message = '';
-    this.aOrderService.accept(this.currentOrder.id)
+    this.aOrderService.revision(this.currentOrder.id)
       .subscribe({
         next: (res) => {
           console.log(res);

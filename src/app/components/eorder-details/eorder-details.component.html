@@ -2,41 +2,41 @@
 <div *ngIf="viewMode; else editable">
   <div *ngIf="currentOrder.id">
     <div class="card card-container">
-    <h4>Order</h4>
-    <div>
-      <label><strong>subject:</strong></label> {{ currentOrder.subject }}
-    </div>
+      <h4>Order</h4>
+      <div>
+        <label><strong>subject:</strong></label> {{ currentOrder.subject }}
+      </div>
 
-    <div>
-      <label><strong>periodExecution:</strong></label> {{ currentOrder.periodExecution }}
-    </div>
-    <div>
-      <label><strong>signControl:</strong></label> {{ currentOrder.signControl }}
-    </div>
-    <div>
-      <label><strong>orderText:</strong></label> {{ currentOrder.orderText }}
-    </div>
-    <div>
-      <label><strong>execEmployeeUsername:</strong></label> {{ currentOrder.execEmployeeUsername }}
-    </div>
+      <div>
+        <label><strong>periodExecution:</strong></label> {{ currentOrder.periodExecution }}
+      </div>
+      <div>
+        <label><strong>signControl:</strong></label> {{ currentOrder.signControl }}
+      </div>
+      <div>
+        <label><strong>orderText:</strong></label> {{ currentOrder.orderText }}
+      </div>
+      <div>
+        <label><strong>AuthEmployeeUsername:</strong></label> {{ currentOrder.authorEmployeeUsername }}
+      </div>
 
       <div>
         <label><strong>State:</strong></label> {{ currentOrder.state }}
       </div>
-    <a
-      class="badge badge-warning"
-      routerLink="{{ currentOrder.id }}"
-    >
-      Edit
-    </a>
-  </div>
-  <div *ngIf="!currentOrder">
-    <br />
-    <p>Please click on a Order...</p>
-  </div>
-</div>
-</div>
+      <a
+        class="badge badge-warning"
+        routerLink="{{ currentOrder.id }}"
+      >
+        Edit
+      </a>
+    </div>
 
+    <div *ngIf="!currentOrder">
+      <br />
+      <p>Please click on a Order...</p>
+    </div>
+  </div>
+</div>
 
 
 <ng-template #editable>
@@ -90,13 +90,13 @@
       </div>
 
       <div class="form-group">
-        <label for="execEmployeeUsername">execEmployeeUsername</label>
+        <label for="authorEmployeeUsername">authorEmployeeUsername</label>
         <input
           type="text"
           class="form-control"
-          id="execEmployeeUsername"
-          [(ngModel)]="currentOrder.execEmployeeUsername"
-          name="execEmployeeUsername"
+          id="authorEmployeeUsername"
+          [(ngModel)]="currentOrder.authorEmployeeUsername"
+          name="authorEmployeeUsername"
         />
       </div>
 
@@ -110,48 +110,43 @@
 
     <button
       class="badge badge-primary mr-2"
-      *ngIf="currentOrder.state=='CONTROL'"
-      (click)="accept()"
+      *ngIf="currentOrder.state=='PREPARATION'"
+      (click)="perform()"
     >
-      Accept
+      Perform
     </button>
-    <div class="alert alert-warning" *ngIf="isaccept">
-      Accept failed!<br />{{ errorMessage }}
+    <div class="alert alert-warning" *ngIf="isperform">
+      Perform failed!<br />{{ errorMessage }}
     </div>
+
+
     <button
       class="badge badge-primary mr-2"
-      *ngIf="currentOrder.state=='CONTROL'"
-      (click)="revision()"
+      *ngIf="currentOrder.state=='PERFORMANCE'"
+      (click)="control()"
     >
-      Revision
+      Control
     </button>
-    <div class="alert alert-warning" *ngIf="isrevision">
-      Revision failed!<br />{{ errorMessage }}
+    <div class="alert alert-warning" *ngIf="iscontrol">
+      Control failed!<br />{{ errorMessage }}
     </div>
 
 
-    <button class="badge badge-danger mr-2" (click)="deleteOrder()">
-      Delete
-    </button>
-    <div class="alert alert-warning" *ngIf="isdelete">
-      Delete failed!<br />{{ errorMessage }}
-    </div>
     <button
-      type="submit"
-      class="badge badge-success mb-2"
-      (click)="updateOrder()"
+      class="badge badge-primary mr-2"
+      *ngIf="currentOrder.state=='REVISION'"
+      (click)="seconperform()"
     >
-      Update
+      Second perform
     </button>
+    <div class="alert alert-warning" *ngIf="isseconcontrol">
+      Second perform failed!<br />{{ errorMessage }}
+    </div>
     <p>{{ message }}</p>
-  </div>
-
-  <div class="alert alert-warning" *ngIf="isupdate">
-    Update failed!<br />{{ errorMessage }}
-  </div>
 
   <div *ngIf="!currentOrder.id">
     <br />
     <p>Cannot access this Order...</p>
+  </div>
   </div>
 </ng-template>

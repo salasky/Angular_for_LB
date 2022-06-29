@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {AOrder} from "../models/aorder.model";
-import {Subdisision} from "../models/subdisision.model";
+
 const baseUrl = 'http://localhost:8080/orders';
 @Injectable({
   providedIn: 'root'
@@ -23,9 +23,6 @@ export class AOrderService {
     return this.http.get<AOrder[]>(`http://localhost:8080/orders/authorders`);
   }
 
-  getExecOrder(): Observable<AOrder> {
-    return this.http.get(`${baseUrl}/execorders`);
-  }
 
 
   create(data: any): Observable<any> {

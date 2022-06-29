@@ -21,6 +21,8 @@ import { SubdivisionListComponent } from './components/subdivision-list/subdivis
 import { AddOrderComponent } from './components/add-order/add-order.component';
 import { AOrderDetailsComponent } from './components/aorder-details/aorder-details.component';
 import { AOrderListComponent } from './components/aorder-list/aorder-list.component';
+import { EOrderDetailsComponent } from './components/eorder-details/eorder-details.component';
+import { EOrderListComponent } from './components/eorder-list/eorder-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,9 @@ import { AOrderListComponent } from './components/aorder-list/aorder-list.compon
     SubdivisionListComponent,
     AddOrderComponent,
     AOrderDetailsComponent,
-    AOrderListComponent
+    AOrderListComponent,
+    EOrderDetailsComponent,
+    EOrderListComponent
   ],
   imports: [
     BrowserModule,

@@ -20,8 +20,14 @@ import { AOrderListComponent } from './components/aorder-list/aorder-list.compon
 import { AOrderDetailsComponent } from './components/aorder-details/aorder-details.component';
 import { AddOrderComponent } from './components/add-order/add-order.component';
 
+import { EOrderListComponent } from './components/eorder-list/eorder-list.component';
+import { EOrderDetailsComponent } from './components/eorder-details/eorder-details.component';
 
 const routes: Routes = [
+
+  { path: 'user/eorder', component: EOrderListComponent },
+  { path: 'user/eorder/:id', component: EOrderDetailsComponent },
+
 
   { path: 'user/aorder', component: AOrderListComponent },
   { path: 'user/aorder/:id', component: AOrderDetailsComponent },

@@ -1,0 +1,14 @@
+.edit-form {
+  max-width: 400px;
+
+}
+
+.card-container.card {
+  max-width: 350px;
+
+  position: fixed;
+  right: 400px;
+  top: 90px;
+  white-space: normal;
+  border: black;
+}
